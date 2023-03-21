@@ -67,7 +67,7 @@ public class Alquiler {
 		if (fechaAlquiler == null) {
 			throw new NullPointerException("ERROR: La fecha de alquiler no puede ser nula.");
 		}
-		if (fechaAlquiler.isAfter(LocalDate.now())) { 
+		if (fechaAlquiler.isAfter(LocalDate.now())) {
 			throw new IllegalArgumentException("ERROR: La fecha de alquiler no puede ser futura.");
 		}
 		this.fechaAlquiler = fechaAlquiler;
@@ -85,7 +85,7 @@ public class Alquiler {
 			throw new IllegalArgumentException(
 					"ERROR: La fecha de devolución debe ser posterior a la fecha de alquiler.");
 		}
-		if (fechaDevolucion.isAfter(LocalDate.now())) { 
+		if (fechaDevolucion.isAfter(LocalDate.now())) {
 			throw new IllegalArgumentException("ERROR: La fecha de devolución no puede ser futura.");
 		}
 		this.fechaDevolucion = fechaDevolucion;
@@ -101,7 +101,7 @@ public class Alquiler {
 	public int getPrecio() {
 		int precio = 0;
 		if (this.fechaDevolucion != null) {
-			int numDias = (int) ChronoUnit.DAYS.between(getFechaAlquiler(), getFechaDevolucion()); 
+			int numDias = (int) ChronoUnit.DAYS.between(getFechaAlquiler(), getFechaDevolucion());
 			precio = (PRECIO_DIA + vehiculo.getFactorPrecio()) * numDias; // cada vehículo calcula su factor precio.
 		}
 		return precio;
@@ -129,9 +129,11 @@ public class Alquiler {
 	public String toString() {
 		String cadena = null;
 		if (this.fechaDevolucion == null) {
-			cadena = String.format("%s <---> %s, %s - %s (%d€)", cliente, vehiculo, getFechaAlquiler().format(FORMATO_FECHA), "Aún no devuelto", getPrecio());
+			cadena = String.format("%s <---> %s, %s - %s (%d€)", cliente, vehiculo,
+					getFechaAlquiler().format(FORMATO_FECHA), "Aún no devuelto", getPrecio());
 		} else {
-			cadena = String.format("%s <---> %s, %s - %s (%d€)", cliente, vehiculo, fechaAlquiler.format(FORMATO_FECHA), fechaDevolucion.format(FORMATO_FECHA), getPrecio());
+			cadena = String.format("%s <---> %s, %s - %s (%d€)", cliente, vehiculo, fechaAlquiler.format(FORMATO_FECHA),
+					fechaDevolucion.format(FORMATO_FECHA), getPrecio());
 		}
 		return cadena;
 	}

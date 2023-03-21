@@ -76,7 +76,8 @@ public class ModeloCascada extends Modelo {
 
 	@Override
 	public void borrar(Cliente cliente) throws OperationNotSupportedException {
-		for (Alquiler alquilerCliente : getAlquileres().get(cliente)) { // recorro lista para cada cliente, y borra cada alquiler de ese cliente.
+		for (Alquiler alquilerCliente : getAlquileres().get(cliente)) { // recorro lista para cada cliente, y borra cada
+																		// alquiler de ese cliente.
 			getAlquileres().borrar(alquilerCliente);
 		}
 		getClientes().borrar(cliente); // borra cliente.
@@ -109,7 +110,7 @@ public class ModeloCascada extends Modelo {
 	public List<Vehiculo> getListaVehiculos() {
 		List<Vehiculo> listaVehiculo = new ArrayList<>();
 		for (Vehiculo vehiculo1 : getVehiculos().get()) {
-			Vehiculo vehiculo =  Vehiculo.copiar(vehiculo1);
+			Vehiculo vehiculo = Vehiculo.copiar(vehiculo1);
 			listaVehiculo.add(vehiculo);
 		}
 		return listaVehiculo;

@@ -13,7 +13,7 @@ public class Consola {
 	private static final String PATRON_MES = "MM/yyyy";
 	private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern(PATRON_FECHA);
 
-	private void Consola() {
+	private Consola() {
 	}
 
 	public static void mostrarCabecera(String mensaje) {

@@ -20,7 +20,7 @@ public class Autobus extends Vehiculo {
 	}
 
 	private void setPlazas(int plazas) {
-		
+
 		if (plazas < 7 || plazas > 100) {
 			throw new IllegalArgumentException("ERROR: Las plazas no son correctas.");
 		}

@@ -132,7 +132,8 @@ public enum Accion {
 	public abstract void ejecutar();
 
 	private static boolean esOrdinalValido(int ordinal) {
-		return ordinal >= 0 && ordinal < Accion.values().length; // con values length obtengo la cantidad de elementos de Accion
+		return ordinal >= 0 && ordinal < Accion.values().length; // con values length obtengo la cantidad de elementos
+																	// de Accion
 	}
 
 	public static Accion get(int ordinal) {

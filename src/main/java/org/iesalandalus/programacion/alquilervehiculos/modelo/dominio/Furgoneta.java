@@ -45,6 +45,7 @@ public class Furgoneta extends Vehiculo {
 	public int getFactorPrecio() {
 		return pma / FACTOR_PMA + plazas * FACTOR_PLAZAS;
 	}
+
 	@Override
 	public String toString() {
 		return String.format("%s %s (%d kg, %d plazas) - %s", getMarca(), getModelo(), pma, plazas, getMatricula());

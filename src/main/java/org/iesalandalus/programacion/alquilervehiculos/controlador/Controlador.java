@@ -16,7 +16,7 @@ public class Controlador {
 	private Modelo modelo;
 
 	public Controlador(Modelo modelo, Vista vista) {
-		if (modelo == null) { 
+		if (modelo == null) {
 			throw new NullPointerException("El modelo no puede ser nulo. ");
 		}
 		if (vista == null) {
@@ -24,7 +24,7 @@ public class Controlador {
 		}
 		this.modelo = modelo;
 		this.vista = vista;
-		vista.setControlador(this); 
+		vista.setControlador(this);
 	}
 
 	public void comenzar() {
@@ -37,7 +37,7 @@ public class Controlador {
 		vista.terminar();
 	}
 
-	public void insertar(Cliente cliente) throws OperationNotSupportedException { //las excepciones se propagan
+	public void insertar(Cliente cliente) throws OperationNotSupportedException { // las excepciones se propagan
 		modelo.insertar(cliente);
 	}
 
@@ -68,6 +68,7 @@ public class Controlador {
 	public void devolver(Cliente cliente, LocalDate fechaDevolucion) throws OperationNotSupportedException {
 		modelo.devolver(cliente, fechaDevolucion);
 	}
+
 	public void devolver(Vehiculo vehiculo, LocalDate fechaDevolucion) throws OperationNotSupportedException {
 		modelo.devolver(vehiculo, fechaDevolucion);
 	}

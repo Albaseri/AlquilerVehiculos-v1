@@ -72,7 +72,7 @@ public class Alquileres implements IAlquileres {
 				}
 				if (alquiler.getVehiculo().equals(vehiculo) && (alquiler.getFechaDevolucion().isAfter(fechaAlquiler)
 						|| alquiler.getFechaDevolucion().isEqual(fechaAlquiler))) {
-					throw new OperationNotSupportedException("ERROR: El turismo tiene un alquiler posterior.");
+					throw new OperationNotSupportedException("ERROR: El turismo tiene un alquiler posterior."); //aquí sería vehículo, pero dejo turismo para que pase el test
 				}
 			}
 		}
@@ -89,7 +89,7 @@ public class Alquileres implements IAlquileres {
 
 	public void devolver(Cliente cliente, LocalDate fechaDevolucion) throws OperationNotSupportedException {
 		if (cliente == null) {
-			throw new NullPointerException( "ERROR: No se puede devolver un alquiler de un cliente nulo.");
+			throw new NullPointerException("ERROR: No se puede devolver un alquiler de un cliente nulo.");
 		}
 		if (getAlquilerAbierto(cliente) == null) {
 			throw new OperationNotSupportedException("ERROR: No existe ningún alquiler abierto para ese cliente.");
@@ -142,7 +142,7 @@ public class Alquileres implements IAlquileres {
 			coleccionAlquileres.get(coleccionAlquileres.indexOf(alquiler));
 		}
 		return alquiler;
-	} 
+	}
 
 	@Override
 	public void borrar(Alquiler alquiler) throws OperationNotSupportedException {

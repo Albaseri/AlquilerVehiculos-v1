@@ -11,7 +11,8 @@ import org.iesalandalus.programacion.alquilervehiculos.vista.Vista;
 
 public class VistaTexto extends Vista {
 
-	public void VistaTexto() {
+	public VistaTexto() {
+		super();
 		Accion.setVista(this);
 	}
 
@@ -88,7 +89,7 @@ public class VistaTexto extends Vista {
 
 	public void devolverAlquilerCliente() {
 		try {
-			getControlador().devolver(Consola.leerCliente(), Consola.leerFechaDevolucion());
+			getControlador().devolver(Consola.leerClienteDni(), Consola.leerFechaDevolucion());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -96,7 +97,7 @@ public class VistaTexto extends Vista {
 
 	public void devolverAlquilerVehiculo() {
 		try {
-			getControlador().devolver(Consola.leerCliente(), Consola.leerFechaDevolucion());
+			getControlador().devolver(Consola.leerVehiculoMatricula(), Consola.leerFechaDevolucion());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
