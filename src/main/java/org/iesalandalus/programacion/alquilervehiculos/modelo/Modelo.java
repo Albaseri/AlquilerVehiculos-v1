@@ -17,14 +17,14 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Cl
 import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.FuenteDatosMemoria;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Vehiculos;
 
-public abstract class Modelo{
+public abstract class Modelo {
 	private IClientes clientes;
 	private IAlquileres alquileres;
 	private IVehiculos vehiculos;
 	private IFuenteDatos fuenteDatos;
 
 	protected IClientes getClientes() {
-		return clientes; 
+		return clientes;
 	}
 
 	protected IVehiculos getVehiculos() {
@@ -42,9 +42,6 @@ public abstract class Modelo{
 		clientes = fuenteDatos.crearClientes();
 		vehiculos = fuenteDatos.crearVehiculos();
 		alquileres = fuenteDatos.crearAlquileres();
-		/*clientes = new Clientes();
-		vehiculos = new Vehiculos();
-		alquileres = new Alquileres();*/
 	}
 
 	public void terminar() {
@@ -63,7 +60,8 @@ public abstract class Modelo{
 
 	public abstract Alquiler buscar(Alquiler alquiler);
 
-	public abstract void modificar(Cliente cliente, String nombre, String telefono) throws OperationNotSupportedException;
+	public abstract void modificar(Cliente cliente, String nombre, String telefono)
+			throws OperationNotSupportedException;
 
 	public abstract void devolver(Cliente cliente, LocalDate fechaDevolucion) throws OperationNotSupportedException;
 
@@ -71,7 +69,7 @@ public abstract class Modelo{
 
 	public abstract void borrar(Cliente cliente) throws OperationNotSupportedException;
 
-	public abstract void borrar (Vehiculo vehiculo) throws OperationNotSupportedException;
+	public abstract void borrar(Vehiculo vehiculo) throws OperationNotSupportedException;
 
 	public abstract void borrar(Alquiler alquiler) throws OperationNotSupportedException;
 

@@ -108,5 +108,4 @@ public class Cliente {
 	public String toString() {
 		return String.format("%s - %s (%s)", nombre, dni, telefono);
 	}
-
 }
